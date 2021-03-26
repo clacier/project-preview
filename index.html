@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./init.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="big_img_box">
+      <div class="close_icon" id="close">x</div>
+      <div class="big_img_bg"></div>
+      <img src="" alt="" id="bigImg" />
+    </div>
+    <div style="margin: 20px">
+      项目都部署在内网环境，外网无法访问，只有截些图片和视频预览了（^_^）
+    </div>
+
+    <div class="title">伽利略数字工厂-dcs系统</div>
+    <div class="flex_box">
+      <div class="img_box">
+        <div class="bigIcon" id="big1">+</div>
+        <img src="./asstes/dcs1.jpg" id="img1" />
+      </div>
+      <div class="img_box">
+        <div class="bigIcon" id="big2">+</div>
+        <img src="./asstes/dcs2.jpg" id="img2" />
+      </div>
+      <div class="img_box">
+        <div class="bigIcon" id="big3">+</div>
+        <img src="./asstes/dcs3.jpg" id="img3" />
+      </div>
+    </div>
+    <div class="title">视频</div>
+    <video src="./asstes/dcs.mp4" controls class="video"></video>
+    <div class="title">dcs设置器</div>
+    <div class="flex_box">
+      <div class="img_box">
+        <div class="bigIcon" id="big4">+</div>
+        <img src="./asstes/dcsSet1.jpg" id="img4" />
+      </div>
+      <div class="img_box">
+        <div class="bigIcon" id="big5">+</div>
+        <img src="./asstes/dcsSet.jpg" id="img5" />
+      </div>
+    </div>
+    <div class="title">视频</div>
+    <video src="./asstes/dcsSet.mp4" controls class="video"></video>
+    <div class="title">图表仓库</div>
+    <video src="./asstes/storeChart.mp4" controls class="video"></video>
+    <div class="title">图表关联</div>
+    <div class="flex_box">
+      <div class="img_box">
+        <div class="bigIcon" id="big6">+</div>
+        <img src="./asstes/storeChart.jpg" id="img6" />
+      </div>
+    </div>
+    <script>
+      var big_img_box = document.querySelector(".big_img_box");
+      var bigImg = document.getElementById("bigImg");
+      var imgDom;
+      document.addEventListener("click", function (e) {
+        console.log(e);
+        var id = e.target.id;
+        if (id && id.indexOf("big") > -1) {
+          var num = id.substr(id.length - 1, id.length);
+          imgDom = document.getElementById("img" + num);
+          big_img_box.style.display = "block";
+          bigImg.src = imgDom.src;
+          console.log(imgDom.src);
+        } else if (id === "close") {
+          big_img_box.style.display = "none";
+        }
+        imgDom = null;
+      });
+    </script>
+  </body>
+</html>
