@@ -34,6 +34,7 @@ body {
 #bigImg {
   width: auto;
   position: fixed;
+  min-width: 50%;
   left: 0;
   top: 0;
   height: auto;
